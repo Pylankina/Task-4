@@ -9,7 +9,7 @@ Solver::Solver(ifstream &fin):DB(fin){
     max=solve(L, m);
 }
 int Solver::solve(int L, int m){
-    if (w[m - 1].second > L)
+    if (w[m - 1].second > L)//если вещь уже превышает по весу
         return solve(L, m - 1);
 
     int res1=solve(L - w[m - 1].second, m-1);
